@@ -1,6 +1,6 @@
 # Burger
 
-One Paragraph of project description goes here
+Create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM.
 
 ## Getting Started
 
