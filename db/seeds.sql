@@ -1,0 +1,1 @@
+INSERT INTO burgers (id, burger_name,devoured) Values (1, "Hamburger", true), (2, "Cheeseburger", true), (3, "Turkey", false);
