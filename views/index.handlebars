@@ -1,3 +1,22 @@
 <h1>Burgers!</h1>
 {{!-- <h2>Eat-Da-Burger</h2>
 <form id="eatBurger" class="eat"><textarea type="text" name="newBurgerName"></textarea><button type="submit">Submit</button></form> --}}
+
+<table>
+    <thead>
+        <tr>
+            <th><abbr title="id">Number</abbr></th>
+            <th><abbr title="burger">Burger</abbr></th>
+            <th><abbr title="action">Action</abbr></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dbBurger}}
+        <tr data-id="{{id}}">
+            <td>{{this.id}}</td>
+            <td>{{this.burger_name}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{!-- ======= --}}

@@ -1,1 +1,1 @@
-INSERT INTO burgers (burger_name,devoured) Values ("Hamburger", true), ("Cheeseburger", true), ("Turkey", false);
+INSERT INTO burgers Values ("Hamburger", true,'2017-11-01 03:20:53','2017-11-01 03:20:53'), ("Cheeseburger", true,'2017-11-01 03:20:53','2017-11-01 03:20:53'), ("Turkey", false,'2017-11-01 03:20:53','2017-11-01 03:20:53');
