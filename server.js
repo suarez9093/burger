@@ -2,7 +2,7 @@
 // Dependencies
 // ===================================================================
 const express = require("express");
-const hbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 
 // Express
 // ===============================================
@@ -12,22 +12,29 @@ const PORT = process.env.PORT || 3001;
 // Require Models/routes for syncing
 // ====================================================
 const db = require("./models");
-// const routes = require("./controllers/burgers_controller");
-require("./controllers/burgers_controller")(app);
 
 
 // Set up the Express app to handle data parsing
 // ==========================================================
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-// app.use(routes);
+
+// Static Directory
+// =========================================================
 app.use(express.static("public"));
 
 
 // Handlebars
 //===============================================================
-app.engine("handlebars", hbs({defaultLayout: "main"}));
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
+
+
+// Routes
+// ===============================================================
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
+
 
 db.sequelize.sync().then(function(){
     app.listen(PORT, function(){
