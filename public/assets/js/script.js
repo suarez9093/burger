@@ -9,3 +9,15 @@ $("#submit").on("click", function(event){
     })
     console.log("New burger added",newBurger);
 })
+
+$("#eatBurger").on("click", function(){
+   let id = $(this).parents("tr").data("id");
+
+
+   $.ajax({
+       method: "DELETE",
+       url: `/api/burgers/${id}`
+   }).then(function(response){
+       location.reload();
+   })
+})
