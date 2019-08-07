@@ -1,17 +1,26 @@
 <h1>Burgers!</h1>
-{{!-- <h2>Eat-Da-Burger</h2>
-<form id="eatBurger" class="eat"><textarea type="text" name="newBurgerName"></textarea><button type="submit">Submit</button></form> --}}
+
+{{!-- 
+ {{#each burger}}
+ <ul>
+     <li>{{this.burger_name}}</li>
+
+
+ </ul>
+
+  {{/each}} --}}
 
 <table>
     <thead>
         <tr>
-            <th><abbr title="id">Number</abbr></th>
+            <th><abbr title="id"></abbr>Number</abbr></th>
             <th><abbr title="burger">Burger</abbr></th>
             <th><abbr title="action">Action</abbr></th>
         </tr>
     </thead>
     <tbody>
-        {{#each dbBurger}}
+        {{#each burger}}
+
         <tr data-id="{{id}}">
             <td>{{this.id}}</td>
             <td>{{this.burger_name}}</td>
@@ -20,5 +29,5 @@
         {{/each}}
     </tbody>
 </table>
-<a href="#"><button>Add a burger</button></a>
+<a href="/burger/new"><button>Add a burger</button></a>
 {{!-- ======= --}}

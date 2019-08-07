@@ -3,16 +3,19 @@ const db = require("../models");
 module.exports = function(app){
 
 app.get("/api/burgers", function(req,res){
-    db.Burgers.findAll({}).then(function(dbBurger){
-        res.json(dbBurger)
+    db.Burgers.findAll({}).then(function(burger){
+        res.json(burger)
     })
 })
 
 app.post("/api/burgers", function(req,res){
 
-    db.Burgers.create(newBurger).then(function(dbBurger){
-        console.log(`Added Burger ${dbBurger.burger_name}`);
-        res.json({id: dbBurger.id})
+    let newBurger = {
+        burger_name: req.body.burger_name
+    }
+    db.Burgers.create(newBurger).then(function(burger){
+        console.log(`Added Burger ${burger.burger_name}`);
+        res.json({id: burger.id})
     })
 
 })
